@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.detail.DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/detailCollapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleTextColor="@color/white"
+            app:expandedTitleMarginEnd="@dimen/_24sdp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/ivMovieToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_240sdp"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                tools:src="@tools:sample/backgrounds/scenic"
+                android:contentDescription="@string/movie_backdrop_image" />
+            
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/title_background"/>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:contentInsetStartWithNavigation="0dp"
+                app:navigationIconTint="?colorOnSurface"
+                app:layout_collapseMode="pin"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_movie_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/bookmark_btn"
+                android:layout_marginTop="@dimen/_28sdp"
+                android:layout_marginHorizontal="@dimen/_14sdp"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/bookmark_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_14sdp"
+                app:layout_constraintTop_toTopOf="@id/tv_movie_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_bookmark_outlined"
+                android:contentDescription="@string/desc_bookmark_button" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_movie_overview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/bookmark_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginHorizontal="@dimen/_14sdp"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_movie_release_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_movie_overview"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:drawableStart="@drawable/ic_date"
+                app:drawableTint="?colorOnSurface"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginHorizontal="@dimen/_14sdp"
+                android:gravity="center_vertical"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:drawablePadding="@dimen/_8sdp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_movie_popularity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_movie_release_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:drawableStart="@drawable/ic_popularity"
+                app:drawableTint="?colorOnSurface"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_14sdp"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/_8sdp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_movie_recommendation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_movie_recommendation"
+                app:layout_constraintTop_toBottomOf="@id/tv_movie_popularity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginHorizontal="@dimen/_14sdp"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_movie_recommendation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_movie_recommendation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+            <include
+                android:id="@+id/viewError"
+                layout="@layout/content_error"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_movie_recommendation" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_movie_recommendation" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

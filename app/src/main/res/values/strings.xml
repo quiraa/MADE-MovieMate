@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MovieMate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="text_empty_bookmark">Empty Bookmark</string>
+    <string name="text_tv_error">Something Wrong</string>
+    <string name="text_menu_bookmark">Bookmark</string>
+    <string name="text_menu_search">Search</string>
+    <string name="text_menu_home">Home</string>
+    <string name="text_empty_data">Empty Data</string>
+    <string name="search_hint">Search Movies</string>
+    <string name="text_top_rated">Top Rated</string>
+    <string name="text_upcoming">Upcoming</string>
+    <string name="text_popular">Popular</string>
+    <string name="text_movie_recommendation">Recommendation</string>
+    <string name="desc_bookmark_button">Bookmark Button</string>
+    <string name="movie_backdrop_image">Movie Backdrop Image</string>
+    <string name="search_movies_text">Search Movies</string>
+    <string name="enable_dark_mode">Enable Dark Mode</string>
+    <string name="settings_menu_title">Settings</string>
+    <string name="crash_this_app">Crash This App</string>
+
+</resources>

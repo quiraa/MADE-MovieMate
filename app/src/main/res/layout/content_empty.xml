@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_emptybox"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_180sdp"
+            app:lottie_autoPlay="true"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:lottie_fileName="emptybox.json"
+            android:layout_centerInParent="true"
+            app:lottie_loop="true" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/content_empty_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_empty_data"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/lottie_emptybox"
+            android:textSize="@dimen/_16ssp" />
+
+
+</RelativeLayout>

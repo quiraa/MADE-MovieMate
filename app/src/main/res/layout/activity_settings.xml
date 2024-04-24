@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.settings.SettingsActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/settings_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:title="Settings"
+        app:titleTextColor="?colorOnPrimary"
+        android:background="?colorPrimary"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="?colorOnPrimary"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/theme_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/theme_switch"
+        android:text="@string/enable_dark_mode"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_marginStart="@dimen/_16sdp"/>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/theme_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/_16sdp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/crash_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/theme_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/_16sdp"
+        app:icon="@drawable/ic_warning"
+        app:iconGravity="textStart"
+        android:backgroundTint="?colorError"
+        android:text="@string/crash_this_app"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
